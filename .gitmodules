@@ -1,0 +1,24 @@
+[submodule "Shared/Stefanini.Web"]
+	path = Shared/Stefanini.Web
+	url = https://gitlab.com/pocstefa/stefanini.web.git
+[submodule "Shared/Stefanini.Business"]
+	path = Shared/Stefanini.Business
+	url = https://gitlab.com/pocstefa/stefanini.business.git
+[submodule "Shared/Stefanini.Common"]
+	path = Shared/Stefanini.Common
+	url = https://gitlab.com/pocstefa/stefanini.common.git
+[submodule "Shared/Stefanini.Domain"]
+	path = Shared/Stefanini.Domain
+	url = https://gitlab.com/pocstefa/stefanini.domain.git
+[submodule "Shared/Stefanini.Log"]
+	path = Shared/Stefanini.Log
+	url = https://gitlab.com/pocstefa/stefanini.log.git
+[submodule "Shared/Stefanini.Repository"]
+	path = Shared/Stefanini.Repository
+	url = https://gitlab.com/pocstefa/stefanini.repository.git
+[submodule "Shared/Stefanini.Repository.EntityFramework"]
+	path = Shared/Stefanini.Repository.EntityFramework
+	url = https://gitlab.com/pocstefa/stefanini.repository.entityframework.git
+[submodule "Shared/Stefanini.Application"]
+	path = Shared/Stefanini.Application
+	url = https://gitlab.com/pocstefa/stefanini.application.git

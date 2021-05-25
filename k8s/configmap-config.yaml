@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: gatekeeper-config
+data:
+  keycloak-gatekeeper.conf: |+
+    discovery-url: http://keycloak.labs-sesc.com.br/auth/realms/sesc-dn
+    skip-openid-provider-tls-verify: true
+    client-id: cadastro
+    client-secret: 79c20b0d-3bee-4af3-9bbe-bf9a75890fd3
+    listen: :3000
+    tls-cert:
+    tls-private-key:
+    enable-refresh-tokens: true
+    redirection-url: http://apidemo.labs-sesc.com.br
+    secure-cookie: false
+    encryption-key: vGcLt8ZUdPX5fXhtLZaPHZkGWHZrT6aa
+    upstream-url: http://127.0.0.1:80/
+    forbidden-page: /html/access-forbidden.html
+    resources:
+    - uri: /api/aluno/*
+      methods:
+      - POST
+      roles:
+      - cadastro:novo_cadastro
+    - uri: /api/aluno/*
+      methods:
+      - PUT
+      roles:
+      - cadastro:editar_cadastro  
+    - uri: /api/*
+      methods:
+      - GET
+
+
+

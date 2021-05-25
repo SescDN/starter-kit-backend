@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-demo-deployment
+spec:
+  selector:
+    matchLabels:
+      app: api-demo-deployment
+  template:
+    metadata:
+      labels:
+        app: api-demo-deployment
+    spec:
+      hostAliases:
+      - ip: "10.1.205.15"
+        hostnames:
+        - "keycloak.labs-sesc.com.br"       
+      containers:
+      - name: api
+        image: fabricioveronez/autenticacao-demo-api:v1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        env:
+          - name: DATABASE_HOST
+            value: sqlserver
+          - name: DATABASE_DATABASE
+            value: demoapp
+          - name: DATABASE_USER
+            value: sa
+          - name: DATABASE_PASSWORD
+            value: SqlServer@123
+        ports:
+        - containerPort: 80
+      - name: gatekeeper
+        image: carlosedp/keycloak-gatekeeper:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"        
+        args:
+        - --config=/etc/keycloak-gatekeeper.conf
+        ports:
+        - containerPort: 3000
+          name: service
+        volumeMounts:
+        - name: gatekeeper-config
+          mountPath: /etc/keycloak-gatekeeper.conf
+          subPath: keycloak-gatekeeper.conf
+        - name: gatekeeper-files
+          mountPath: /html
+      volumes:
+      - name : gatekeeper-config
+        configMap:
+          name: gatekeeper-config
+      - name : gatekeeper-files
+        configMap:
+          name: gatekeeper-files        

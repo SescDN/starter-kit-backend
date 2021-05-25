@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="8.6.2" />
+    <PackageReference Include="Stefanini.Business" Version="1.0.0" />
+    <PackageReference Include="Stefanini.Common" Version="1.0.0" />
+    <PackageReference Include="Stefanini.Repository" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

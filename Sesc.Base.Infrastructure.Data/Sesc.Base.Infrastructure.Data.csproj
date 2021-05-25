@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.6" />
+
+    <PackageReference Include="Stefanini.Repository" Version="1.0.0" />
+
+    <PackageReference Include="Stefanini.Repository.EntityFramework" Version="1.0.0" />
+
+    <PackageReference Include="Stefanini.Web" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sesc.Base.Domain\Sesc.Base.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

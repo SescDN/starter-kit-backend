@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: api-demo-ingress  
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: apidemo.labs-sesc.com.br
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: api-demo-service
+          servicePort: 80
